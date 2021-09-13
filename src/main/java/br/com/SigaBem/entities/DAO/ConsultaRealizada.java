@@ -1,10 +1,9 @@
 package br.com.SigaBem.entities.DAO;
 
-import br.com.SigaBem.dto.request.ConsultaDTO;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "tb_consultas")

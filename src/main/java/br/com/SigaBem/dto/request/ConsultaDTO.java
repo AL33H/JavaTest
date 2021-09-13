@@ -1,15 +1,28 @@
 package br.com.SigaBem.dto.request;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class ConsultaDTO {
 
     /*
                         ATTRIBUTES
      */
 
-
+    @NotEmpty(message = "Preenchimento obrigatório!")
+    @Size(max = 25, message = "Nome deve conter menos de 25 caracteres")
     private String nomeDestinatario;
+
+    @NotEmpty(message = "Preenchimento obrigatório!")
+    @Size(min = 8, max = 8, message = "CEP deve conter 8 dígitos")
     private String cepOrigem;
+
+    @NotEmpty(message = "Preenchimento obrigatório!")
+    @Size(min = 8, max = 8, message = "CEP deve conter 8 dígitos")
     private String cepDestino;
+
+    @NotNull
     private Double peso;
 
     /*

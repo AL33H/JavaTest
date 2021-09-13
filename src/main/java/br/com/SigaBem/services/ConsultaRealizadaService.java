@@ -9,6 +9,7 @@ import br.com.SigaBem.entities.DAO.ConsultaRealizada;
 import br.com.SigaBem.repository.ConsultaRealizadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 
 import java.time.LocalDate;
@@ -25,18 +26,17 @@ public class ConsultaRealizadaService {
 
 
 
-    public ResponseConsultaDTO SalvarConsulta(ConsultaDTO consultaDTO){
+    public ResponseConsultaDTO SalvarConsulta(ConsultaDTO consultaDTO) throws MethodArgumentNotValidException {
 
-        ConsultaRealizada consultaRealizada = ConsultaDTOParaConsultaRealizada(consultaDTO);
+            ConsultaRealizada consultaRealizada = ConsultaDTOParaConsultaRealizada(consultaDTO);
 
-        consultaRealizada.setDataConsulta(LocalDate.now());
+            consultaRealizada.setDataConsulta(LocalDate.now());
 
-        consultaRealizada.setVlTotalFrete(calcularValorTotalDoFrete(consultaDTO));
+            consultaRealizada.setVlTotalFrete(calcularValorTotalDoFrete(consultaDTO));
 
-        consultaRealizada.setDataPrevistaEntrega(calcularPrevisaoDeEntrega(consultaDTO, consultaRealizada.getDataConsulta()));
+            consultaRealizada.setDataPrevistaEntrega(calcularPrevisaoDeEntrega(consultaDTO, consultaRealizada.getDataConsulta()));
 
-        return ConsultaRealizadaParaResponseConsultaDTO((ConsultaRealizada) repository.save(consultaRealizada));
-
+            return ConsultaRealizadaParaResponseConsultaDTO((ConsultaRealizada) repository.save(consultaRealizada));
     }
 
     public ResponseConsultaDTO ConsultaRealizadaParaResponseConsultaDTO(ConsultaRealizada consultaRealizada){

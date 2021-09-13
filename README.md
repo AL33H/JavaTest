@@ -40,3 +40,7 @@ Deve ser persistido no banco os valores da cotação os valores consultados: “
 
 # Entrega: 
  * Disponibilizar um link do repositório no GitHub e encaminhar para developer@cd2.com.br
+
+
+# Link do Swagger (Documentação)
+<a href="https://app.swaggerhub.com/apis-docs/AL33H/SigaBemJavaTest/1.0.0">Clique Aqui.</a>

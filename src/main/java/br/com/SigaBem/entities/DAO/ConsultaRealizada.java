@@ -2,7 +2,9 @@ package br.com.SigaBem.entities.DAO;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.Objects;
 
 
 @Entity
@@ -17,12 +19,26 @@ public class ConsultaRealizada {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
+    @NotBlank
+    @Column(length = 55)
     private String nomeDestinatario;
+
+    @NotBlank
     private String cepOrigem;
+
+    @NotBlank
     private String cepDestino;
+
+    @NotNull
     private Double peso;
+
+    @NotNull
     private Double vlTotalFrete;
+
+    @NotBlank
     private LocalDate dataPrevistaEntrega;
+
+    @NotBlank
     private LocalDate dataConsulta;
 
     /*
@@ -111,11 +127,29 @@ public class ConsultaRealizada {
         this.dataConsulta = dataConsulta;
     }
 
-
-
     /*
                         METHODS
      */
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ConsultaRealizada that = (ConsultaRealizada) o;
+        return Id == that.Id;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(Id);
+    }
+
+    @Override
+    public String toString() {
+        return "ConsultaRealizada{" +
+                "nomeDestinatario='" + nomeDestinatario + '\'' +
+                ", vlTotalFrete=" + vlTotalFrete +
+                ", dataPrevistaEntrega=" + dataPrevistaEntrega +
+                '}';
+    }
 }

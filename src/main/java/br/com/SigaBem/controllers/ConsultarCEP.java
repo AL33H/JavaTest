@@ -1,10 +1,8 @@
 package br.com.SigaBem.controllers;
 
 import br.com.SigaBem.entities.CEP;
-import org.springframework.beans.factory.annotation.Autowired;
+import br.com.SigaBem.util.Exception.CepNotFoundException;
 import org.springframework.http.ResponseEntity;
-
-
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
@@ -24,6 +22,10 @@ public class ConsultarCEP {
                 .build();
 
         ResponseEntity<CEP> response = template.getForEntity(uri.toUriString(), CEP.class);
+
+        if(response.getBody().getCep() == null){
+            throw new CepNotFoundException(cep);
+        }
 
         return response.getBody();
     }

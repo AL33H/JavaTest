@@ -35,4 +35,9 @@ public class ConsultaRealizadaController {
         return ResponseEntity.ok().body(service.SalvarConsulta(consultaDTO));
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public String MapearGetParaTestes(){
+        return "Api Funcionando";
+    }
+
 }

@@ -52,7 +52,25 @@ Deve ser persistido no banco os valores da cotação os valores consultados: “
 - Banco de dados: H2-test, PostgreSQL-dev/prod
 
 
-# Configuração
+# Iniciar Aplicação
+
+1. Selecione o diretório abra o CMD, e insira;
+
+```xsdregexp
+git clone https://github.com/AL33H/JavaTest.git
+```
+2. Após Clonar o diretório, insira;
+
+```xsdregexp
+mvn spring-boot:run 
+```
+
+3. Após a inicialização acesse, <a href="http://localhost:8080/consulta">Clique aqui</a>.
+
+
+
+
+# Configuração banco de dados
 
 Atualizar valor em ```application-dev.properties``` com os valores de acordo com a configuração do banco de dados postgreSQL.
 
@@ -63,3 +81,5 @@ spring.datasource.password=${PASSWORD}
 ```
 
 Em ```application.properties``` atualizar valor de, ```spring.profiles.active=test``` para ```spring.profiles.active=dev```
+
+

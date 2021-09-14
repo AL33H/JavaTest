@@ -35,10 +35,10 @@ public class ConsultaRealizada {
     @NotNull
     private Double vlTotalFrete;
 
-    @NotBlank
+    @NotNull
     private LocalDate dataPrevistaEntrega;
 
-    @NotBlank
+    @NotNull
     private LocalDate dataConsulta;
 
     /*

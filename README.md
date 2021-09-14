@@ -44,3 +44,22 @@ Deve ser persistido no banco os valores da cotação os valores consultados: “
 
 # Link do Swagger (Documentação)
 <a href="https://app.swaggerhub.com/apis-docs/AL33H/SigaBemJavaTest/1.0.0">Clique Aqui.</a>
+
+# Tecnologias 
+- Project: Maven
+- Language: Java 11
+- Springboot: Versão 2.5.4
+- Banco de dados: H2-test, PostgreSQL-dev/prod
+
+
+# Configuração
+
+Atualizar valor em ```application-dev.properties``` com os valores de acordo com a configuração do banco de dados postgreSQL.
+
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/${DATABASE_NAME}
+spring.datasource.username=${USER_NAME_DB}
+spring.datasource.password=${PASSWORD}
+```
+
+Em ```application.properties``` atualizar valor de, ```spring.profiles.active=test``` para ```spring.profiles.active=dev```

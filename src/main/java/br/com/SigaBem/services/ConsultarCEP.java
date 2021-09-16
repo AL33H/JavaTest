@@ -1,4 +1,4 @@
-package br.com.SigaBem.controllers;
+package br.com.SigaBem.services;
 
 import br.com.SigaBem.entities.CEP;
 import br.com.SigaBem.util.Exception.CepNotFoundException;
@@ -11,6 +11,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 public class ConsultarCEP {
+
 
     public CEP consultarCEP(String cep){
         RestTemplate template = new RestTemplate();

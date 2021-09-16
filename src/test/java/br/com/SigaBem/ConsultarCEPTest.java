@@ -1,7 +1,7 @@
 package br.com.SigaBem;
 
 import br.com.SigaBem.entities.CEP;
-import br.com.SigaBem.controllers.ConsultarCEP;
+import br.com.SigaBem.services.ConsultarCEP;
 
 import org.junit.jupiter.api.Test;
 

@@ -59,20 +59,20 @@ Deve ser persistido no banco os valores da cotação os valores consultados: “
 ```xsdregexp
 git clone https://github.com/AL33H/JavaTest.git
 ```
-2. Após Clonar o diretório, insira;
+2. Após Clonar o diretório, insira o comando para iniciar a API localmente;
 
 ```xsdregexp
 mvn spring-boot:run 
 ```
 
-3. Após a inicialização acesse, <a href="http://localhost:8080/consulta">Clique aqui</a>.
+3. Para acessar a documentação Swagger, <a href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html </a>
 
 
 
 
 # Configuração banco de dados
 
-Atualizar valor em ```application-dev.properties``` com os valores de acordo com a configuração do banco de dados postgreSQL.
+Atualizar valor em ```application-dev.properties``` com os valores da sua configuração do banco de dados postgreSQL.
 
 ```
 spring.datasource.url=jdbc:postgresql://localhost:5432/${DATABASE_NAME}

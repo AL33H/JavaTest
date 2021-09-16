@@ -1,7 +1,6 @@
 package br.com.SigaBem.services;
 
 
-import br.com.SigaBem.controllers.ConsultarCEP;
 import br.com.SigaBem.dto.request.ConsultaDTO;
 import br.com.SigaBem.dto.response.ResponseConsultaDTO;
 import br.com.SigaBem.entities.CEP;
@@ -26,7 +25,7 @@ public class ConsultaRealizadaService {
 
 
 
-    public ResponseConsultaDTO SalvarConsulta(ConsultaDTO consultaDTO) throws MethodArgumentNotValidException {
+    public ResponseConsultaDTO SalvarConsulta(ConsultaDTO consultaDTO) {
 
             ConsultaRealizada consultaRealizada = ConsultaDTOParaConsultaRealizada(consultaDTO);
 

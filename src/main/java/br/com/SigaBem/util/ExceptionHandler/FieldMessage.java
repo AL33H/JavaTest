@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 public class FieldMessage implements Serializable {
 
-    private static final long SerialVersionUID = 1l;
-
     private String fildname;
     private String message;
 

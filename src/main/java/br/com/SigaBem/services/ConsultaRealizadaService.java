@@ -8,9 +8,6 @@ import br.com.SigaBem.entities.DAO.ConsultaRealizada;
 import br.com.SigaBem.repository.ConsultaRealizadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-
-
 import java.time.LocalDate;
 import java.util.Objects;
 

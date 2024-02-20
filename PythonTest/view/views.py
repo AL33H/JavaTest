@@ -1,13 +1,15 @@
 from datetime import datetime
 
 from flask import jsonify, request
-from main import app, db
+
+from main import app
 from models.entity.Consulta import Consulta
+from service.consulta_service import new, find_all
 
 
 @app.route('/', methods=['GET'])
-def index():
-    consultas = Consulta.query.order_by(Consulta.id).all()
+def buscar_todos():
+    consultas = find_all()
 
     dados_consultas = []
     for consulta in consultas:
@@ -17,13 +19,16 @@ def index():
             'cep_origem': consulta.cep_origem,
             'cep_destino': consulta.cep_destino,
             'peso': consulta.peso,
+            'valor_total_frete': consulta.valor_total_frete,
+            'data_prevista_entrega': consulta.data_prevista_entrega,
+            'data_consulta': consulta.data_consulta
         })
 
     return jsonify(dados_consultas)
 
 
 @app.route('/new', methods=['POST'])
-def new():
+def novo():
     json = request.json
 
     consulta = Consulta()
@@ -33,7 +38,6 @@ def new():
     consulta.peso = json['peso']
     consulta.data_consulta = datetime.now().date()
 
-    db.session.add(consulta)
-    db.session.commit()
+    nova_consulta = new(consulta)
 
-    return jsonify('Cadastro efetuado com sucesso'), 200
+    return jsonify(nova_consulta.__str__())

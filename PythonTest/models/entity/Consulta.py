@@ -14,5 +14,16 @@ class Consulta(db.Model):
     def __init__(self):
         pass
 
+    def __str__(self):
+        return f'{super().__str__()}'
+
     def __repr__(self):
-        return f'{self.id}'
+        return (f'ID: {self.id}, \
+                NOME_DESTINATARIO: {self.nome_destinatario}, \
+                CEP_ORIGEM: {self.cep_origem}, \
+                CEP_DESTINATARIO: {self.cep_destino}, \
+                PESO: {self.peso},\
+                VALOR_TOTAL_FRETE: {self.valor_total_frete}, \
+                DATA_PREVISTA_ENTREGA: {self.data_prevista_entrega}, \
+                DATA_CONSULTA: {self.data_consulta}')
+

@@ -26,3 +26,4 @@ class Consulta(db.Model):
                 VALOR_TOTAL_FRETE: {self.valor_total_frete}, \
                 DATA_PREVISTA_ENTREGA: {self.data_prevista_entrega}, \
                 DATA_CONSULTA: {self.data_consulta}')
+
